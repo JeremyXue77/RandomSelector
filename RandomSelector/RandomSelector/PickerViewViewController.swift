@@ -23,7 +23,7 @@ class PickerViewViewController: UIViewController, UIPickerViewDataSource, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpPickerView(data: ["Web","Backend","iOS","Android"])
+        setUpPickerView(data: ["Mom's Touch","三媽臭臭鍋","49扁食","吉紅鮮","鹹豬肉炒飯","牛肉麵"])
         
         // Do any additional setup after loading the view.
     }
@@ -73,7 +73,13 @@ class PickerViewViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     func randomPicker() {
         
+        // Back to the middle of pickerView
+        let position = self.pickerViewDataSize / 2 + pickerView.selectedRow(inComponent: 0) % self.pickerViewData.count
+        self.pickerView.selectRow(position, inComponent: 0, animated: false)
+        
+        // Start Position
         var row = self.pickerViewDataSize / 2
+        // Random Range
         let random = row + Int(arc4random() % UInt32(pickerViewDataSize / pickerViewData.count))
         
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
@@ -83,8 +89,6 @@ class PickerViewViewController: UIViewController, UIPickerViewDataSource, UIPick
                 self.pickerView.selectRow(row, inComponent: 0, animated: true)
             } else {
                 timer.invalidate()
-                let position = self.pickerViewDataSize / 2 + row % self.pickerViewData.count
-                self.pickerView.selectRow(position, inComponent: 0, animated: false)
             }
         }
         
