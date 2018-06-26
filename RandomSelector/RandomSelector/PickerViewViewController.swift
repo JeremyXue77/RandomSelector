@@ -12,8 +12,9 @@ class PickerViewViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     // Picker view
     var pickerView:UIPickerView!
-    var pickerViewDataSize:Int!
     
+    
+    var pickerViewDataSize:Int!
     var pickerViewData = [String]()
     
     @IBAction func randomTest(_ sender: UIButton) {
@@ -23,7 +24,7 @@ class PickerViewViewController: UIViewController, UIPickerViewDataSource, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpPickerView(data: ["Mom's Touch","三媽臭臭鍋","49扁食","吉紅鮮","鹹豬肉炒飯","牛肉麵"])
+        setUpPickerView(data: ["不吃晚餐","吃垃圾食物","吃便當店","吃自助餐","隨便吃","吃滷味店"])
         
         // Do any additional setup after loading the view.
     }
